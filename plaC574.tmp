@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://w5aa8vj44qkv"]
+
+[ext_resource type="Texture2D" uid="uid://24hu7up5u0s5" path="res://fish.png" id="1_nspi6"]
+[ext_resource type="PackedScene" uid="uid://j805fjrcdf7" path="res://floor.tscn" id="3_g5ahg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nj4yi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhjpu"]
+radius = 23.0
+height = 98.0
+
+[node name="Player" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_nj4yi")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("1_nspi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fhjpu")
+
+[node name="floor" parent="." instance=ExtResource("3_g5ahg")]

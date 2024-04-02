@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://da4b0n6jb7303"]
+[gd_scene load_steps=6 format=3 uid="uid://cqttoa2m6uaa7"]
 
-[ext_resource type="Script" path="res://fish.gd" id="1_d7hre"]
+[ext_resource type="Script" path="res://fish.gd" id="1_0c8hu"]
 [ext_resource type="Texture2D" uid="uid://24hu7up5u0s5" path="res://fish.png" id="1_nspi6"]
-[ext_resource type="PackedScene" uid="uid://5kv0jyf773ls" path="res://floor.tscn" id="3_g5ahg"]
+[ext_resource type="PackedScene" uid="uid://j805fjrcdf7" path="res://floor.tscn" id="3_g5ahg"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2qu42"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mky04"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -15,23 +15,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtesd"]
-radius = 152.941
-height = 462.745
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddx4d"]
+radius = 38.0
+height = 136.0
 
-[node name="Player" type="Node2D"]
+[node name="player" type="Node2D"]
 
-[node name="fish" type="CharacterBody2D" parent="."]
-scale = Vector2(0.255, 0.255)
-script = ExtResource("1_d7hre")
+[node name="fish" type="RigidBody2D" parent="."]
+script = ExtResource("1_0c8hu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish"]
-sprite_frames = SubResource("SpriteFrames_2qu42")
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_mky04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
-position = Vector2(4.26326e-14, 11.7647)
+position = Vector2(0, 5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_wtesd")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
+shape = SubResource("CapsuleShape2D_ddx4d")
 
 [node name="floor" parent="." instance=ExtResource("3_g5ahg")]
