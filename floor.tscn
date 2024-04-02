@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5kv0jyf773ls"]
+
+[ext_resource type="Script" path="res://floorarea.gd" id="1_uajmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sawjs"]
+size = Vector2(1252, 415)
+
+[node name="floor" type="Node2D"]
+
+[node name="floorarea" type="StaticBody2D" parent="."]
+script = ExtResource("1_uajmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floorarea"]
+position = Vector2(592, 640)
+shape = SubResource("RectangleShape2D_sawjs")

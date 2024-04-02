@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://da4b0n6jb7303"]
+
+[ext_resource type="Script" path="res://fish.gd" id="1_d7hre"]
+[ext_resource type="Texture2D" uid="uid://24hu7up5u0s5" path="res://fish.png" id="1_nspi6"]
+[ext_resource type="PackedScene" uid="uid://5kv0jyf773ls" path="res://floor.tscn" id="3_g5ahg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qu42"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nspi6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtesd"]
+radius = 152.941
+height = 462.745
+
+[node name="Player" type="Node2D"]
+
+[node name="fish" type="CharacterBody2D" parent="."]
+scale = Vector2(0.255, 0.255)
+script = ExtResource("1_d7hre")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish"]
+sprite_frames = SubResource("SpriteFrames_2qu42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
+position = Vector2(4.26326e-14, 11.7647)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wtesd")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="floor" parent="." instance=ExtResource("3_g5ahg")]
