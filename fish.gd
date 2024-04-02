@@ -17,7 +17,6 @@ func _process(delta):
 		if rotation_degrees > MAX_ROTATION and force < MAX_FORCE:
 			force += 10
 			rotate(-0.01)
-			print(force)
 	
 	if Input.is_action_just_released("ui_accept"):
 		apply_impulse(Vector2(force, -force))

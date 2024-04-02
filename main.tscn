@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dovun60pw260t"]
+
+[ext_resource type="PackedScene" uid="uid://bksogoqvbib61" path="res://bowl.tscn" id="1_08ojc"]
+[ext_resource type="PackedScene" uid="uid://cqttoa2m6uaa7" path="res://player.tscn" id="2_hitkw"]
+[ext_resource type="PackedScene" uid="uid://j805fjrcdf7" path="res://floor.tscn" id="3_pba87"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(500, -200)
+
+[node name="Bowl" parent="." instance=ExtResource("1_08ojc")]
+position = Vector2(79, -90)
+
+[node name="player" parent="." instance=ExtResource("2_hitkw")]
+position = Vector2(79, -126)
+
+[node name="floor" parent="." instance=ExtResource("3_pba87")]
+position = Vector2(-37, -507)

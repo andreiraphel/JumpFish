@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bksogoqvbib61"]
+
+[ext_resource type="Texture2D" uid="uid://dt5yj4p66b56t" path="res://fishbowl.png" id="1_g41w4"]
+
+[node name="Bowl" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_g41w4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-80, -64, -97, -53, -115, -30, -129, -2, -140, 36, -140, 72, -135, 91, -125, 116, -103, 144, -85, 156, -25, 161, 79, 157, 107, 140, 137, 97, 145, 53, 137, 2, 124, -23, 101, -52, 87, -61, 86, -55, 116, -23, 131, 6, 137, 32, 138, 63, 136, 74, 131, 89, 123, 105, 105, 127, 81, 149, -76, 151, -109, 130, -117, 115, -127, 92, -130, 69, -133, 36, -123, 0, -111, -23, -99, -38, -86, -52, -75, -58)
