@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqttoa2m6uaa7"]
+[gd_scene load_steps=7 format=3 uid="uid://cqttoa2m6uaa7"]
 
 [ext_resource type="Script" path="res://fish.gd" id="1_0c8hu"]
 [ext_resource type="Texture2D" uid="uid://24hu7up5u0s5" path="res://fish.png" id="1_nspi6"]
 [ext_resource type="PackedScene" uid="uid://j805fjrcdf7" path="res://floor.tscn" id="3_g5ahg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_te0yf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mky04"]
 animations = [{
@@ -22,6 +24,7 @@ height = 136.0
 [node name="player" type="Node2D"]
 
 [node name="fish" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_te0yf")
 script = ExtResource("1_0c8hu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish"]
